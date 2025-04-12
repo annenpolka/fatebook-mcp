@@ -3,6 +3,14 @@
 本プロジェクトは、[https://modelcontextprotocol.io/llms-full.txt](https://modelcontextprotocol.io/llms-full.txt) および [https://fatebook.io/api/openapi.json](https://fatebook.io/api/openapi.json) を根拠とし、[https://fatebook.io/](https://fatebook.io/) のMCPサーバー実装を行う。以下の詳細ルールに従うこと。
 
 ---
+## docs/配下ドキュメントの役割
+
+- docs/deno_adoption_checklist.md: Deno採用可否・技術調査観点のチェックリスト
+- docs/deno_mcp_server_research.md: Denoを用いたMCPサーバー事例・比較・開発指針
+- docs/fatebook-mcp-design.md: Fatebook MCPサーバーの設計計画・構成・設計方針
+- docs/fatebook_reference.md: Fatebookサービス・APIの概要・連携機能リファレンス
+- docs/mcp_test_strategy.md: MCPサーバー開発におけるテスト戦略・ベストプラクティス
+
 
 ## 1. MCPプロトコル準拠
 
