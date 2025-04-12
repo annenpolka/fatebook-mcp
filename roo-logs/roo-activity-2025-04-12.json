@@ -258,5 +258,22 @@
     "intention": "エントリーポイント(main.ts)とMCPサーバーロジック(server.ts)の責務分離を徹底し、main.tsからサーバー起動処理を行う構造にするため。",
     "context": "ユーザーフィードバック（ログID: 8012f964-d021-43e2-8826-3d5d2c89ad4d）に基づくリファクタリング作業の一環。",
     "parentId": "8012f964-d021-43e2-8826-3d5d2c89ad4d"
+  },
+  {
+    "id": "df99b20d-d50e-4d37-a05c-a95b140b34b7",
+    "timestamp": "2025-04-12T09:59:17.049Z",
+    "type": "file_operation",
+    "level": "info",
+    "summary": "main.tsにサーバー起動メッセージ(console.log)を追加",
+    "details": {
+      "file": "main.ts",
+      "operation": "insert_content",
+      "inserted_line": 6,
+      "inserted_content": "console.log(\"Fatebook MCP Server started.\");",
+      "stacktrace": "insert_content > main.ts"
+    },
+    "intention": "サーバーの起動状態を明示し、運用・デバッグ時の利便性を高めるため",
+    "context": "ユーザー指示に基づき、main.tsにconsole.log(\"Fatebook MCP Server started.\")を追加。サーバー初期化完了直後・リクエスト待機直前に出力されるようにした。",
+    "parentId": "ac118625-b8c8-4da5-a464-6f7c4695ecb4"
   }
 ]
