@@ -1,0 +1,66 @@
+# .gitignore for Deno Projects
+
+# OS generated files
+####################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Deno specific
+###############
+# Deno dependency cache directory (though usually outside the project root)
+# If DENO_DIR is set within the project, uncomment the following:
+# .deno_dir/
+
+# Lock file (if you prefer not to commit it, though committing is often recommended)
+# deno.lock
+
+# Test coverage output
+cov_profile/
+coverage/
+.coverage/
+
+# Node.js compatibility
+#########################
+# If using nodeModulesDir = "auto" or "manual" in deno.json[1]
+node_modules/
+
+# Build artifacts
+#################
+dist/
+out/
+build/
+
+# Environment variables
+#####################
+.env
+.env.*
+!.env.example
+
+# Log files
+###########
+*.log
+logs/
+*.log.*
+
+# Editor/IDE specific
+#####################
+.vscode/
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+#################
+*.tmp
+~$*.* # Microsoft Office temporary files[2]
+
+# Other common ignores
+######################
+*.swp # Vim swap files
+*~ # Backup files
