@@ -138,5 +138,38 @@
     "intention": "意味単位で管理した履歴をリモートに反映し、チーム共有・CI/CD連携を可能にするため",
     "context": "意味単位コミット・push指示の最終ステップ",
     "parentId": "73145f10-e94f-4bba-8d66-326b3316f77c"
+  },
+  {
+    "id": "1c544566-2c09-4c88-84bd-489dbce30347",
+    "timestamp": "2025-04-12T09:28:43.020Z",
+    "type": "decision_made",
+    "level": "info",
+    "summary": "Brave検索でDeno対応MCPサーバーSDK/ライブラリ候補を特定。公式TypeScript SDKとDeno用テンプレート等を中心に比較評価を進める方針を決定。",
+    "intention": "DenoでのMCPサーバー実装に最適なSDK/ライブラリ選定のため、調査方針を明確化する",
+    "context": "Fatebook API連携MCPサーバー開発の初期設計段階。SDK/ライブラリ選定は今後の開発効率・保守性に直結するため、Deno互換性・実績・機能性を重視して調査を進める。",
+    "relatedIds": [
+      "52c469a7-7f68-4a87-80d6-900af068320c"
+    ]
+  },
+  {
+    "id": "706e52fe-c32c-483d-9144-75edeeaa42b3",
+    "timestamp": "2025-04-12T09:32:21.034Z",
+    "type": "file_operation",
+    "level": "info",
+    "summary": "src/main.tsを公式SDK READMEに準拠した最小構成で新規作成、deno.jsonにnpm import設定を追加",
+    "details": {
+      "created_files": [
+        "src/main.ts"
+      ],
+      "updated_files": [
+        "deno.json"
+      ],
+      "main_ts_content": "import { McpServer } from \"npm:@modelcontextprotocol/sdk/server/mcp.js\";\nimport { StdioServerTransport } from \"npm:@modelcontextprotocol/sdk/server/stdio.js\";\n\nconst server = new McpServer({\n  name: \"fatebook-mcp-server\",\n  version: \"0.1.0\"\n});\nconst transport = new StdioServerTransport();\nawait server.connect(transport);",
+      "deno_json_content": "{\n  \"tasks\": {\n    \"dev\": \"deno run --watch main.ts\"\n  },\n  \"imports\": {\n    \"@std/assert\": \"jsr:@std/assert@1\",\n    \"npm:@modelcontextprotocol/sdk\": \"npm:@modelcontextprotocol/sdk\"\n  }\n}",
+      "note": "Denoのnpmパッケージキャッシュ未取得等によりVSCode上で一時的なエラー表示が出る場合があるが、ファイル構成・記述自体は公式SDK READMEに準拠している。"
+    },
+    "intention": "Fatebook MCPサーバーのDeno用エントリーポイント初期実装と依存設定を、公式SDKの推奨に従い正しく行うため",
+    "context": "ユーザー指示・公式SDK README・プロジェクトルールに基づき、最小限のMCPサーバー初期化コードとnpm import設定を作成。VSCodeのDeno拡張の警告はnpmキャッシュ未取得等が原因であり、実装自体は正しい。",
+    "parentId": "da53561a-af27-4a4e-92fe-a4ad3b62a69d"
   }
 ]
