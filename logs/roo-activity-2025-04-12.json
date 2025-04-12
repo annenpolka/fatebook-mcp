@@ -1,0 +1,142 @@
+[
+  {
+    "id": "8ba971ec-4b7f-43a2-b043-fbc70ba22421",
+    "timestamp": "2025-04-12T03:53:11.876Z",
+    "type": "decision_made",
+    "level": "info",
+    "summary": "Playwright連携Deno2 MCPサーバー実装例（jakedahn/deno2-playwright-mcp-server）の特徴・技術スタック・設計思想を調査",
+    "intention": "Deno×MCPサーバーの実用的なブラウザ自動化連携例を把握し、設計・運用・拡張性の参考とするため",
+    "context": "READMEより、Deno 2＋PlaywrightでMCPサーバーを実装。バイナリ配布・クロスプラットフォーム対応。Puppeteer MCPサーバーを参考に、LLMからブラウザ自動操作・スクリーンショット・JS実行等を提供。MCPプロトコル経由でClaude等から利用可能。設計思想・運用性・拡張性の観点で有用な事例。",
+    "parentId": "f84218d1-137e-46db-8263-68b3b2499b9d"
+  },
+  {
+    "id": "8701da6a-72cf-4772-9c94-6bae9335c46f",
+    "timestamp": "2025-04-12T03:53:28.578Z",
+    "type": "decision_made",
+    "level": "info",
+    "summary": "@phughesmcr/deno-mcp-template（jsr.io）パッケージの調査失敗（404）",
+    "intention": "Deno MCPサーバーのテンプレートパッケージの有無・現状を把握し、利用可能なリソースの有無を明確化するため",
+    "context": "https://jsr.io/@phughesmcr/deno-mcp-template へのfetchで404。パッケージ消失・URL変更・非公開化等の可能性。現時点で詳細調査不可。",
+    "parentId": "f84218d1-137e-46db-8263-68b3b2499b9d"
+  },
+  {
+    "id": "4cb94d3d-e829-4a8b-ba91-7419da6a55f7",
+    "timestamp": "2025-04-12T03:53:50.450Z",
+    "type": "decision_made",
+    "level": "info",
+    "summary": "ResearchMCP（Deno+Brave Search連携MCPサーバー）の特徴・設計思想・運用性を調査",
+    "intention": "Deno MCPサーバーの応用例・Brave Search連携・リサーチ用途の設計パターンを把握し、今後の設計・実装の参考とするため",
+    "context": "ResearchMCPはDeno＋Brave Search連携のMCPサーバー。MCPプロトコルとBrave Search APIを組み合わせたリサーチツールで、ローカル/コンテナ両対応・Claude API連携による検索結果の要約・分析もサポート。セットアップ容易・拡張性あり。リサーチ用途の設計・運用パターンとして有用。",
+    "parentId": "f84218d1-137e-46db-8263-68b3b2499b9d"
+  },
+  {
+    "id": "4c1222ec-ae20-45c5-ab88-bd0681bf35f3",
+    "timestamp": "2025-04-12T03:54:10.049Z",
+    "type": "decision_made",
+    "level": "info",
+    "summary": "MCP公式事例リスト（modelcontextprotocol.io/examples）からDeno実装例・設計パターンを調査",
+    "intention": "Deno MCPサーバー開発に活かせる公式・コミュニティ実装例の設計思想・API設計・運用パターン・拡張性を把握するため",
+    "context": "公式事例リストにはDeno専用テンプレは明示されていないが、TypeScriptベースのサーバー（Puppeteer, Brave Search, Fetch等）はDeno互換性が高く、DenoでのMCPサーバー実装の参考になる。公式・コミュニティ実装例の設計思想・API設計・運用パターン・拡張性も多様で、Deno環境での応用も十分可能。",
+    "parentId": "f84218d1-137e-46db-8263-68b3b2499b9d"
+  },
+  {
+    "id": "c04ae56e-4cf2-4509-b571-005325cdda1b",
+    "timestamp": "2025-04-12T04:08:21.864Z",
+    "type": "file_operation",
+    "level": "info",
+    "summary": "README.mdをgit add・:memo: docs(readme): プロジェクト概要ドキュメントを追加でコミット",
+    "details": {
+      "file": "README.md",
+      "operation": "git add & commit",
+      "result": "success",
+      "commit_message": ":memo: docs(readme): プロジェクト概要ドキュメントを追加",
+      "stackTrace": [
+        "git add README.md",
+        "git commit -m ':memo: docs(readme): プロジェクト概要ドキュメントを追加' => success"
+      ]
+    },
+    "intention": "プロジェクト概要を明示し、履歴を意味単位で管理するため",
+    "context": "意味単位コミット・push指示に基づく1件目のコミット操作",
+    "parentId": "73145f10-e94f-4bba-8d66-326b3316f77c"
+  },
+  {
+    "id": "24e0bb38-9cfe-4807-941f-efea1fe48e56",
+    "timestamp": "2025-04-12T04:08:46.250Z",
+    "type": "file_operation",
+    "level": "info",
+    "summary": "docs/fatebook_reference.mdをgit addで新規トラッキング開始",
+    "details": {
+      "file": "docs/fatebook_reference.md",
+      "operation": "git add",
+      "result": "success",
+      "stackTrace": [
+        "git add docs/fatebook_reference.md => success"
+      ]
+    },
+    "intention": "Fatebook参考資料を履歴管理し、意味単位コミットの準備をするため",
+    "context": "意味単位コミット・push指示に基づく2件目のadd操作",
+    "parentId": "73145f10-e94f-4bba-8d66-326b3316f77c"
+  },
+  {
+    "id": "85762ad9-4c72-48ff-a1b7-c248b9e4cbf4",
+    "timestamp": "2025-04-12T04:10:12.269Z",
+    "type": "file_operation",
+    "level": "info",
+    "summary": "docs/deno_adoption_checklist.mdをgit add・:memo: docs(tech): Deno採用検討チェックリストを追加でコミット",
+    "details": {
+      "file": "docs/deno_adoption_checklist.md",
+      "operation": "git add & commit",
+      "result": "success",
+      "commit_message": ":memo: docs(tech): Deno採用検討チェックリストを追加",
+      "stackTrace": [
+        "git add docs/deno_adoption_checklist.md",
+        "git commit -m ':memo: docs(tech): Deno採用検討チェックリストを追加' => success"
+      ]
+    },
+    "intention": "Deno採用検討内容を履歴管理し、技術選定の透明性を高めるため",
+    "context": "意味単位コミット・push指示に基づく3件目のコミット操作",
+    "parentId": "73145f10-e94f-4bba-8d66-326b3316f77c"
+  },
+  {
+    "id": "92323177-507d-4039-a376-809c6ab84bcc",
+    "timestamp": "2025-04-12T04:10:36.404Z",
+    "type": "file_operation",
+    "level": "info",
+    "summary": "docs/deno_mcp_server_research.mdをgit add・:memo: docs(research): DenoベースMCPサーバー事例調査を追加でコミット",
+    "details": {
+      "file": "docs/deno_mcp_server_research.md",
+      "operation": "git add & commit",
+      "result": "success",
+      "commit_message": ":memo: docs(research): DenoベースMCPサーバー事例調査を追加",
+      "stackTrace": [
+        "git add docs/deno_mcp_server_research.md",
+        "git commit -m ':memo: docs(research): DenoベースMCPサーバー事例調査を追加' => success"
+      ]
+    },
+    "intention": "Deno×MCPサーバー事例調査内容を履歴管理し、今後の設計・実装の参考とするため",
+    "context": "意味単位コミット・push指示に基づく4件目のコミット操作",
+    "parentId": "73145f10-e94f-4bba-8d66-326b3316f77c"
+  },
+  {
+    "id": "3264e1f1-3fdf-4226-8587-bc072ce76b0a",
+    "timestamp": "2025-04-12T04:11:32.151Z",
+    "type": "file_operation",
+    "level": "info",
+    "summary": "意味単位コミット群をmainブランチへpush",
+    "details": {
+      "operation": "git push",
+      "result": "success",
+      "stackTrace": [
+        "git push => success"
+      ],
+      "pushed_commits": [
+        ":memo: docs(readme): プロジェクト概要ドキュメントを追加",
+        ":memo: docs(tech): Deno採用検討チェックリストを追加",
+        ":memo: docs(research): DenoベースMCPサーバー事例調査を追加"
+      ]
+    },
+    "intention": "意味単位で管理した履歴をリモートに反映し、チーム共有・CI/CD連携を可能にするため",
+    "context": "意味単位コミット・push指示の最終ステップ",
+    "parentId": "73145f10-e94f-4bba-8d66-326b3316f77c"
+  }
+]
