@@ -78,5 +78,84 @@
     "relatedIds": [
       "761590df-76fa-4e3a-8c15-bb410f5477c1"
     ]
+  },
+  {
+    "id": "c5e5f63f-0737-4bed-98db-6c7b85e74a66",
+    "timestamp": "2025-04-13T03:07:28.721Z",
+    "type": "decision_made",
+    "level": "info",
+    "summary": "Typescriptコーディングプラクティスの追加計画",
+    "details": {
+      "reference_source": "https://raw.githubusercontent.com/mizchi/ailab/refs/heads/main/.clinerules",
+      "target_file": ".roo/rules/rules.md",
+      "sections_to_include": [
+        "関数型アプローチ(FP)の原則",
+        "実装パターン(型定義、Result型など)",
+        "実装手順と選択基準",
+        "コードスタイル",
+        "テスト戦略",
+        "Denoの使用方法"
+      ],
+      "sections_to_exclude": [
+        "ドメイン駆動設計(DDD)関連の内容"
+      ]
+    },
+    "intention": "参照リポジトリの.clinerules内容を基に、プロジェクトの要件に合わせたTypeScriptコーディングプラクティスを追加する準備",
+    "context": "ユーザーからの指示に基づき、mizchi/ailabリポジトリの.clineruleファイルを参考に、Fatebook MCPサーバー開発のためのTypeScriptコーディングプラクティスをルールファイルに追加することを計画"
+  },
+  {
+    "id": "1267f5e1-1c80-47d8-a593-138bee255724",
+    "timestamp": "2025-04-13T03:08:04.883Z",
+    "type": "file_operation",
+    "level": "info",
+    "summary": "TypeScriptコーディングプラクティスの内容を整理",
+    "details": {
+      "source": "https://raw.githubusercontent.com/mizchi/ailab/refs/heads/main/.clinerules",
+      "target_file": ".roo/rules/rules.md",
+      "sections_to_include": {
+        "関数型アプローチ": "純粋関数、不変データ構造、副作用分離、型安全性",
+        "型定義と実装パターン": "ブランデッド型、値オブジェクト、Result型、アダプターパターン",
+        "実装手順": "型設計→純粋関数実装→副作用分離",
+        "コードスタイル": "関数優先、不変更新パターン、早期リターン",
+        "テスト戦略": "純粋関数の単体テスト優先、インメモリ実装",
+        "Deno固有の実践": "npm互換モード、モジュール構造、テスト方法"
+      }
+    },
+    "intention": "mizchi/ailab リポジトリの .clinerules から必要な TypeScript コーディングプラクティスの情報を抽出し、プロジェクトに適した形に整理する",
+    "context": "参照リポジトリから取得した情報を基に、関数型プログラミングを中心としたTypeScriptコーディングプラクティスを整理している。DDDに関する内容を除外し、特にDenoやテスト戦略も含めた実装方針を定める準備段階"
+  },
+  {
+    "id": "6f55445b-f230-4c7f-b496-42daa77d0fe2",
+    "timestamp": "2025-04-13T03:11:16.013Z",
+    "type": "file_operation",
+    "level": "info",
+    "summary": "TypeScriptコーディングプラクティスをrules.mdに追加完了",
+    "details": {
+      "file": ".roo/rules/rules.md",
+      "operation": "apply_diff",
+      "sections_added": [
+        "5.1. 関数型アプローチの原則",
+        "5.2. 型定義と実装パターン",
+        "5.3. 実装手順",
+        "5.4. コードスタイル",
+        "5.5. テスト戦略",
+        "5.6. Denoの使い方",
+        "5.7. 実装の選択基準"
+      ],
+      "code_examples": [
+        "ブランデッド型",
+        "Result型",
+        "アダプターパターン",
+        "早期リターンパターン",
+        "テスト例",
+        "Deno構成例"
+      ]
+    },
+    "intention": "mizchi/ailabリポジトリの.clinerulseを参考に、TypeScriptコーディングプラクティスを整理し、プロジェクトルールとして追加することで開発基準を明確化する",
+    "context": "ユーザーの指示に基づき、参照リポジトリから関数型プログラミングを中心としたTypeScriptコーディングプラクティスを抽出し、プロジェクトに適した形式でルールファイルに追加した",
+    "relatedIds": [
+      "c5e5f63f-0737-4bed-98db-6c7b85e74a66",
+      "1267f5e1-1c80-47d8-a593-138bee255724"
+    ]
   }
 ]
