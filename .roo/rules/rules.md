@@ -205,6 +205,14 @@ function validateUser(user: User): Result<User, ValidationError> {
 ```
 
 ### 5.5. テスト戦略
+#### Denoテスト記法・運用方針（プロジェクト標準）
+- Denoの標準テストAPI（Deno.test, assert, assertEquals, assertRejects等）を最大限活用すること。
+- 正常系・異常系（例: 不正APIキー時のUnauthorized等）は明確に分離し、個別のテストケースとして記述する。
+- 例外発生の検証にはtry-catchよりassertRejects等のアサーションAPIを優先する。
+- API通信を伴うintegration testは、.envでAPIキーを管理し、src/xxx.integration.test.ts等の別ファイルで管理する。
+- テストは可読性・堅牢性を重視し、テスト名・アサート内容を明示的に記述すること。
+- テストの追加・修正時はこの方針に従い、テストカバレッジと品質を維持すること。
+
 
 - **純粋関数の単体テストを優先**: 副作用のない関数は簡単にテスト可能
 - **インメモリ実装によるリポジトリテスト**: データアクセス層は実装を差し替え可能に

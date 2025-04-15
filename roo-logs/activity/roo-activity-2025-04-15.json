@@ -25,5 +25,59 @@
     "summary": "docs/fatebook_reference.mdにgetQuestions実行方法（curl例・認証方式）を追記",
     "intention": "Fatebook APIの利用者が正しい認証方法と実行例を参照できるようにするため。",
     "context": "APIキーはクエリパラメータapiKey=...で渡す必要があり、Authorizationヘッダー等では認証されない点・エラー例も明記した。"
+  },
+  {
+    "id": "eb271be9-1f4b-46bb-9233-e6e797c6f45a",
+    "timestamp": "2025-04-15T03:43:02.970Z",
+    "type": "code_generation",
+    "level": "info",
+    "summary": "Implemented getQuestions fetch/format/display logic and unit test",
+    "intention": "To provide a type-safe, testable pipeline for retrieving and displaying Fatebook questions via MCP server integration",
+    "context": "Fatebook MCPサーバー開発の一環として、API型定義（src/types/internal.ts）を活用し、fetchQuestions/formatQuestions関数とテスト（src/fatebook.test.ts）を新規実装。全メッセージは英語化。副作用分離・純粋関数・型安全・テスト容易性を重視。"
+  },
+  {
+    "id": "acf41ca0-9390-4e6e-adbd-3ec0bf892859",
+    "timestamp": "2025-04-15T03:43:28.354Z",
+    "type": "command_execution",
+    "level": "info",
+    "summary": "Executed Deno test for formatQuestions",
+    "intention": "To verify the correctness of the question formatting logic with automated tests",
+    "context": "src/fatebook.test.tsのDenoテストを実行し、全テストが正常にパスしたことを確認。API取得・整形・表示処理の型安全性・テスト容易性を担保。"
+  },
+  {
+    "id": "796ba30e-e662-4c26-b344-9b4af0f8a95b",
+    "timestamp": "2025-04-15T03:48:03.483Z",
+    "type": "command_execution",
+    "level": "info",
+    "summary": "Executed integration test for fetchQuestions (real API call)",
+    "intention": "To verify that the Fatebook API communication logic works correctly with a real API key and network access",
+    "context": "src/fatebook.integration.test.tsをDenoで--allow-env --allow-read --allow-net付きで実行し、fetchQuestionsの実API通信が正常に動作することを確認。APIキーは.envで管理。"
+  },
+  {
+    "id": "8003c9e5-ed98-4ec0-947d-211c068649f4",
+    "timestamp": "2025-04-15T03:50:18.769Z",
+    "type": "command_execution",
+    "level": "info",
+    "summary": "Verified no Bad Request in fetchQuestions integration test",
+    "intention": "To ensure that the Fatebook API call does not return Bad Request or input validation errors with the current implementation and API key",
+    "context": "src/fatebook.integration.test.tsでfetchQuestionsの実API通信テストを実行し、Bad RequestやInput validation failed等のエラーが返らないことをassert。テストは正常にパスし、リクエストが正当であることを確認。"
+  },
+  {
+    "id": "989d7e84-c27c-4852-8b4c-f481b98a5cfc",
+    "timestamp": "2025-04-15T03:51:33.152Z",
+    "type": "command_execution",
+    "level": "info",
+    "summary": "All integration tests for fetchQuestions passed (normal and unauthorized cases)",
+    "intention": "To confirm both valid and invalid API key scenarios for Fatebook API communication using Deno's test assertions",
+    "context": "src/fatebook.integration.test.tsで正常系・異常系（Unauthorized）両方のテストがDenoのassertRejects等でパス。API仕様に即した堅牢なテスト設計を実現。"
+  },
+  {
+    "id": "d835d481-5ec1-4fa3-8674-11c88b820ba6",
+    "timestamp": "2025-04-15T03:53:28.813Z",
+    "type": "docs",
+    "level": "info",
+    "summary": "Denoテスト記法・運用方針をドキュメント化し、ルールファイルに反映",
+    "intention": "テスト品質・運用一貫性を高めるため、Denoテストの標準方針を明文化し、全開発者が参照できるようにする",
+    "context": "docs/mcp_test_strategy.md末尾に詳細なDenoテスト方針を追記し、.roo/rules/rules.mdの5.5.テスト戦略直後にも要点を反映。assertRejects等の活用、正常系・異常系分離、integration test分離などを明記。"
   }
 ]

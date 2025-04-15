@@ -150,4 +150,15 @@ MCP開発で利用できる、または推奨されるテストツールやフ�
 -   **Debugging Guide**: [https://modelcontextprotocol.io/docs/tools/debugging](https://modelcontextprotocol.io/docs/tools/debugging)
 -   **MCP Inspector Guide**: [https://modelcontextprotocol.io/docs/tools/inspector](https://modelcontextprotocol.io/docs/tools/inspector)
 -   **Building MCP with LLMs Tutorial**: [https://modelcontextprotocol.io/tutorials/building-mcp-with-llms](https://modelcontextprotocol.io/tutorials/building-mcp-with-llms)
+
+
+## 7. Denoテスト記法・方針（プロジェクト標準）
+
+- Denoの標準テストAPI（Deno.test, assert, assertEquals, assertRejects等）を最大限活用する。
+- 正常系・異常系（例: 不正APIキー時のUnauthorized等）は明確に分離し、個別のテストケースとして記述する。
+- 例外発生の検証にはtry-catchよりassertRejects等のアサーションAPIを優先する。
+- API通信を伴うintegration testは、.envでAPIキーを管理し、src/xxx.integration.test.ts等の別ファイルで管理する。
+- テストは可読性・堅牢性を重視し、テスト名・アサート内容を明示的に記述する。
+- テストの追加・修正時はこの方針に従い、テストカバレッジと品質を維持すること。
+
 -   **GitHub Organization (Discussions, SDKs, Inspector)**: [https://github.com/modelcontextprotocol](https://github.com/modelcontextprotocol)
