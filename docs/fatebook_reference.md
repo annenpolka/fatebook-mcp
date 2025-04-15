@@ -38,6 +38,21 @@ Fatebookは、個人やチームが「未来の出来事」について予測を
     - /v0/countForecasts: 予測数カウント
 - APIキーによる認証が必要
 
+### /v0/getQuestions 実行方法（curl例）
+
+Fatebook APIのgetQuestionsエンドポイントは、**APIキーをクエリパラメータ `apiKey` として指定**する必要があります。
+
+```sh
+curl -s "https://fatebook.io/api/v0/getQuestions?apiKey=YOUR_API_KEY"
+```
+
+- `Authorization: Bearer ...` や `X-API-KEY: ...` ヘッダーでは認証されません。
+- 認証に失敗した場合、以下のようなエラーが返ります：
+
+```json
+{"message":"Input validation failed","code":"BAD_REQUEST","issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["apiKey"],"message":"Required"}]}
+```
+
 ## 学習・リソース
 
 - [キャリブレーショントレーニング](https://www.quantifiedintuitions.org/calibration)
